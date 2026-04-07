@@ -16,14 +16,14 @@ jobs:
         with:
           go-version: '>=1.21'
 
-      - name: Build dlc.dat
+      - name: Build mysite.dat
         run: |
           # 运行编译工具
           # --exportlists 只指定你 data 文件夹下存在的文件名（Tag）
           go run ./main.go --datapath=./data --exportlists=cn,cnb
           
           # 生成校验和
-          sha256sum dlc.dat > dlc.dat.sha256sum
+          sha256sum mysite.dat > mysite.dat.sha256sum
 
       - name: Upload to Release
         uses: softprops/action-gh-release@v2
@@ -33,7 +33,7 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            dlc.dat
-            dlc.dat.sha256sum
+            mysite.dat
+            mysite.dat.sha256sum
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
