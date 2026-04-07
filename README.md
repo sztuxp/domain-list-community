@@ -61,15 +61,15 @@ Each file in the `data` directory can be used as a rule in this format: `geosite
 }
 ```
 
-## Generate `dlc.dat` manually
+## Generate `mysite.dat` manually
 
 - Install `golang` and `git`
 - Download and install project code: `go get -v --insecure github.com/v2fly/domain-list-community`
-- Generate `dlc.dat` (without `datapath` option means to use `data` directory of this repository in `$GOPATH`):
+- Generate `mysite.dat` (without `datapath` option means to use `data` directory of this repository in `$GOPATH`):
   - `${GOPATH:-$(go env GOPATH)}/bin/domain-list-community`
   - `${GOPATH:-$(go env GOPATH)}/bin/domain-list-community --datapath=/path/to/your/custom/data/directory`
 
-## Structure of data
+## 数据目录下域名列表文件结构
 
 All data are under `data` directory. Each file in the directory represents a sub-list of domains, named by the file name. File content is in the following format.
 
@@ -82,7 +82,7 @@ regexp:www\.google\.com$
 full:www.google.com
 ```
 
-**Syntax:**
+**域名列表文件的语法:**
 
 > The following types of rules are **NOT** fully compatible with the ones that defined by user in V2Ray config file. Do **Not** copy and paste directly.
 
@@ -94,19 +94,6 @@ full:www.google.com
 * Full domain begins with `full:`, followed by a complete and valid domain name.
 * Domains (including `domain`, `keyword`, `regexp` and `full`) may have one or more attributes. Each attribute begins with `@` and followed by the name of the attribute.
 
-## How it works
-
-The entire `data` directory will be built into an external `geosite` file for Project V. Each file in the directory represents a section in the generated file.
-
-To generate a section:
-
-1. Remove all the comments in the file.
-2. Replace `include:` lines with the actual content of the file.
-3. Omit all empty lines.
-4. Generate each `domain:` line into a [sub-domain routing rule](https://github.com/v2fly/v2ray-core/blob/master/app/router/config.proto#L21).
-5. Generate each `keyword:` line into a [plain domain routing rule](https://github.com/v2fly/v2ray-core/blob/master/app/router/config.proto#L17).
-6. Generate each `regexp:` line into a [regex domain routing rule](https://github.com/v2fly/v2ray-core/blob/master/app/router/config.proto#L19).
-7. Generate each `full:` line into a [full domain routing rule](https://github.com/v2fly/v2ray-core/blob/master/app/router/config.proto#L23).
 
 ## How to organize domains
 
