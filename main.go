@@ -423,10 +423,10 @@ func main() {
 		fmt.Println("Failed:", err)
 		os.Exit(1)
 	}
-	if err := ioutil.WriteFile("dlc.dat", protoBytes, 0644); err != nil {
+	if err := ioutil.WriteFile("mysite.dat", protoBytes, 0644); err != nil {
 		fmt.Println("Failed: ", err)
 		os.Exit(1)
 	} else {
-		fmt.Println("dlc.dat has been generated successfully in current directory. You can rename 'dlc.dat' to 'geosite.dat' and use it in V2Ray.")
+		fmt.Println("mysite.dat has been generated successfully in current directory. You can rename 'mysite.dat' to 'geosite.dat' and use it in V2Ray.")
 	}
 }
