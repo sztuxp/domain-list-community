@@ -20,7 +20,8 @@ jobs:
         run: |
           # 运行编译工具
           # --exportlists 只指定你 data 文件夹下存在的文件名（Tag）
-          go run ./main.go --datapath=./data --exportlists=cn,cnb
+          #go run ./main.go --datapath=./data --exportlists=cn,cnb
+          go run ./main.go --datapath=./data --exportlists=all
           
           # 生成校验和
           sha256sum mysite.dat > mysite.dat.sha256sum
