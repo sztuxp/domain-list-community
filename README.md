@@ -1,15 +1,12 @@
 # Domain list community
 
-This project manages a list of domains, to be used as geosites for routing purpose in Project V.
+本项目主要是为补充GEOSITE.DAT没收录的一些小型网站，进行域名标记，利用Domain list community项目的在线编译功能，对这些域名转化GEOSITE.DAT格式的二进制，供XRAY按域名进行分流.
 
 ## Purpose of this project
 
 This project is not opinionated. In other words, it does NOT endorse, claim or imply that a domain should be blocked or proxied. It can be used to generate routing rules on demand.
 
-## Download links
 
-- **dlc.dat**：[https://github.com/v2fly/domain-list-community/raw/release/dlc.dat](https://github.com/v2fly/domain-list-community/raw/release/dlc.dat)
-- **dlc.dat.sha256sum**：[https://github.com/v2fly/domain-list-community/raw/release/dlc.dat.sha256sum](https://github.com/v2fly/domain-list-community/raw/release/dlc.dat.sha256sum)
 
 ## Usage example
 
