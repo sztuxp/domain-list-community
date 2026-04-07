@@ -2,13 +2,7 @@
 
 本项目主要是为补充GEOSITE.DAT没收录的一些小型网站，进行域名标记，利用Domain list community项目的在线编译功能，对这些域名转化GEOSITE.DAT格式的二进制，供XRAY按域名进行分流.
 
-## Purpose of this project
-
-This project is not opinionated. In other words, it does NOT endorse, claim or imply that a domain should be blocked or proxied. It can be used to generate routing rules on demand.
-
-
-
-## Usage example
+## 使用样例
 
 Each file in the `data` directory can be used as a rule in this format: `geosite:filename`.
 
@@ -61,7 +55,7 @@ Each file in the `data` directory can be used as a rule in this format: `geosite
 }
 ```
 
-## Generate `mysite.dat` manually
+## 手工生成 `mysite.dat`
 
 - Install `golang` and `git`
 - Download and install project code: `go get -v --insecure github.com/v2fly/domain-list-community`
@@ -95,7 +89,7 @@ full:www.google.com
 * Domains (including `domain`, `keyword`, `regexp` and `full`) may have one or more attributes. Each attribute begins with `@` and followed by the name of the attribute.
 
 
-## How to organize domains
+## 如何组织域名
 
 ### File name
 
